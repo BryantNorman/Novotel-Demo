@@ -12,9 +12,30 @@
       font-family: Arial, sans-serif;
     }
 
-    food-description {
-      margin-top: 0px;
-    }
+    .menu-container {
+            width: 100%;
+            height: 2%;
+            overflow-x: auto;
+            white-space: nowrap;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border: solid white 2px;
+        }
+
+        .menu-item {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .menu-item:hover {
+            background-color: #555;
+        }
 
     #section-1-image{
       background-image: url("Assets/OurSpaces.jpg");
@@ -23,22 +44,22 @@
 
     #section-2-image{
       background-image: url("Assets/Set-menu-1.jpeg");
-      height: 150vh;
+      height: 130vh;
     }
 
     #section-3-image{
       background-image: url("Assets/Set-Menu-2.png");
-      height: 160vh;
+      height: 140vh;
     }
 
     #section-4-image{
       background-image: url("Assets/Fork-Buffet.jpg");
-      height: 180vh;
+      height: 200vh;
     }
 
     #section-5-image{
       background-image: url("Assets/Finger-Buffet.png");
-      height: 140vh;
+      height: 160vh;
     }
 
     #section-6-image{
@@ -125,6 +146,7 @@
       border: 1px solid white;
       color: white;
       text-align: center;
+      background: black;
     }
 
     th,
@@ -219,6 +241,10 @@
   }
 }
 
+li{
+  text-align: left;
+}
+
 /* Media query for larger screens */
 @media screen and (min-width: 769px) {
   .column {
@@ -231,8 +257,6 @@
   }
 }
 
-
-
     /* font styles */
     .dine{
       font-size: 20px;
@@ -243,10 +267,30 @@
     .food-description{
       font-size: 12px;
     }
+
+
+    tr>th:first-child,tr>td:first-child {
+    position: sticky;
+    left: 0;
+  }
   </style>
 </head>
 
 <body>
+<!-- Sticky Header -->
+<div class="menu-container">
+  <div class="menu-item" onclick="scrollToSection('section-1-image')">OUR SPACES</div>
+  <div class="menu-item" onclick="scrollToSection('section-2-image')">SET MENU 1</div>
+  <div class="menu-item" onclick="scrollToSection('section-3-image')">SET MENU 2</div>
+  <div class="menu-item" onclick="scrollToSection('section-4-image')">FORK BUFFET</div>
+  <div class="menu-item" onclick="scrollToSection('section-5-image')">FINGER BUFFET</div>
+  <div class="menu-item" onclick="scrollToSection('section-6-image')">DAY DELEGATE PACKAGES</div>
+  <div class="menu-item" onclick="scrollToSection('section-7-image')">ROOM ONLY HIRE</div>
+  <div class="menu-item" onclick="scrollToSection('section-8-image')">BABY SHOWER PACKAGE</div>
+  <div class="menu-item" onclick="scrollToSection('section-9-image')">REMEMBRANCE PACKAGE</div>
+  <div class="menu-item" onclick="scrollToSection('section-10-image')">CONTACT US</div>
+</div>
+
 <!-- Setion-1 -->
   <div class="hero-section" id="section-1-image">
     <div class="heading-container">
@@ -270,6 +314,7 @@
           </p>
           <hr style="width: 180px;">
           <p>Enter a world of possibilities.</p>
+          <div style="overflow-x:auto;">
           <table>
             <tr>
               <th></th>
@@ -372,6 +417,7 @@
             </tr>
           </table>
         </div>
+        </div>
       </div>
     </div>
   </div>
@@ -383,32 +429,34 @@
     <div class="container" style="margin-top: 80px" ;>
       <div class="overlay">
         <div class="content-container">
-          <p class="dine"><u><strong>DINE</strong> - £30.00 per person</u></p>
+          <p>
+            <p class="dine"><u><strong>DINE</strong> - £30.00 per person</u></p>
             <p class="menu-heading"><strong>TO START</strong></p>
-              <p class="food-name"> Roasted tomato soup </p>
-                <p class="food-description">served with warm bread & butter</p> 
-              <p class="food-name"> Thai noodles </p>
-                  <p class="food-description">salad Asian style slaw, sweet chilli sauce & sesame seeds</p>  
-              <p class="food-name"> Haggis </p>
-                  <p class="food-description">bon bons Arran mustard & whisky</p>     
+            <p class="food-name" style="margin-bottom: 0px;"> Roasted tomato soup </p>
+            <p class="food-description" style="margin-top: 0px;">served with warm bread & butter</p> 
+            <p class="food-name" style="margin-bottom: 0px;"> Thai noodles </p>
+            <p class="food-description" style="margin-top: 0px;">salad Asian style slaw, sweet chilli sauce & sesame seeds</p>  
+            <p class="food-name" style="margin-bottom: 0px;"> Haggis </p>
+            <p class="food-description" style="margin-top: 0px;">bon bons Arran mustard & whisky</p>     
+          </p>
           <br />
           <p class="menu-heading"><strong>TO FOLLOW</strong></p>
-          <p class="food-name">Chicken katsu curry</p>
-          <p class="food-description">Jasmine rice & pickled vegetables</p>
-          <p class="food-name">Sea bass fillet </p>
-          <p class="food-description">Sautéed potatoes, samphire & cherry tomatoes</p>
-          <p class="food-name">Spinach & ricotta ravioli</p>
-          <p class="food-description">Chive cream sauce, sundried tomatoes & balsato</p>
+          <p class="food-name" style="margin-bottom: 0px;">Chicken katsu curry</p>
+          <p class="food-description" style="margin-top: 0px;">Jasmine rice & pickled vegetables</p>
+          <p class="food-name" style="margin-bottom: 0px;">Sea bass fillet </p>
+          <p class="food-description"style="margin-top: 0px;">Sautéed potatoes, samphire & cherry tomatoes</p>
+          <p class="food-name" style="margin-bottom: 0px;">Spinach & ricotta ravioli</p>
+          <p class="food-description"style="margin-top: 0px;">Chive cream sauce, sundried tomatoes & balsato</p>
           
           <br />
           <p><strong>TO FINISH</strong></p>
           <p>
-            <p class="food-name">Vanilla cheesecake</p>
-            <p class="food-description">Red berry compote </p>
-            <p class="food-name">Chocolate mousse </p>
-            <p class="food-description">Vanilla Chantilly & honeycomb </p>
-            <p class="food-name">Lemon posset </p>
-            <p class="food-description">Basil & raspberries</p>
+            <p class="food-name" style="margin-bottom: 0px;">Vanilla cheesecake</p>
+            <p class="food-description"style="margin-top: 0px;">Red berry compote </p>
+            <p class="food-name" style="margin-bottom: 0px;">Chocolate mousse </p>
+            <p class="food-description"style="margin-top: 0px;">Vanilla Chantilly & honeycomb </p>
+            <p class="food-name" style="margin-bottom: 0px;">Lemon posset </p>
+            <p class="food-description"style="margin-top: 0px;">Basil & raspberries</p>
           </p>
           <p class="note" style="font-size: 12px;">*Dietary requirements catered for on request</p>
         </div>
@@ -425,29 +473,29 @@
         <div class="content-container">
           <p class="dine"><u><STRONG>INDULGE</STRONG>- £35.00 per person</u></p>
             <p class="menu-heading"><strong>TO START</strong></p>
-              <p class="food-name"> Prawn & crayfish cocktail </p>
+              <p class="food-name" style="margin-bottom: 0px;"> Prawn & crayfish cocktail </p>
                 <p class="food-description">Bloody Mary sauce</p> 
-              <p class="food-name"> Prosciutto & poached pear salad </p>
+              <p class="food-name" style="margin-bottom: 0px;"> Prosciutto & poached pear salad </p>
                   <p class="food-description">Blue cheese crumb & house dressing</p>  
-              <p class="food-name"> Creamy cauliflower & parmesan soup </p>
+              <p class="food-name" style="margin-bottom: 0px;"> Creamy cauliflower & parmesan soup </p>
                   <p class="food-description">served with warm bread & butter</p>     
           <br />
           <p class="menu-heading"><strong>TO FOLLOW</strong></p>
-          <p class="food-name">Roasted chicken supreme</p>
-          <p class="food-description">Peas al a Françoise, sautéed potatoes & jus</p>
-          <p class="food-name">Wild mushroom risotto</p>
-          <p class="food-description">Truffle crème fraiche & parmesan crisp</p>
-          <p class="food-name">Seared salmon fillet</p>
-          <p class="food-description">Buttered potatoes, green beans & shallots, hollandaise sauce</p>
+          <p class="food-name" style="margin-bottom: 0px;">Roasted chicken supreme</p>
+          <p class="food-description" style="margin-top: 0px;">Peas al a Françoise, sautéed potatoes & jus</p>
+          <p class="food-name" style="margin-bottom: 0px;">Wild mushroom risotto</p>
+          <p class="food-description" style="margin-top: 0px;">Truffle crème fraiche & parmesan crisp</p>
+          <p class="food-name" style="margin-bottom: 0px;">Seared salmon fillet</p>
+          <p class="food-description" style="margin-top: 0px;">Buttered potatoes, green beans & shallots, hollandaise sauce</p>
           
           <br />
           <p><strong>TO FINISH</strong></p>
-            <p class="food-name">Sticky toffee pudding</p>
-            <p class="food-description">Vanilla ice cream</p>
-            <p class="food-name">Scottish cheeseboard</p>
-            <p class="food-description">Chutney & crackers</p>
-            <p class="food-name">Chocolate & salted caramel torte</p>
-            <p class="food-description">Chantilly cream</p>
+            <p class="food-name" style="margin-bottom: 0px;">Sticky toffee pudding</p>
+            <p class="food-description" style="margin-top: 0px;">Vanilla ice cream</p>
+            <p class="food-name" style="margin-bottom: 0px;">Scottish cheeseboard</p>
+            <p class="food-description" style="margin-top: 0px;">Chutney & crackers</p>
+            <p class="food-name" style="margin-bottom: 0px;">Chocolate & salted caramel torte</p>
+            <p class="food-description" style="margin-top: 0px;">Chantilly cream</p>
           <p class="note" style="font-size: 12px;">*Dietary requirements catered for on request</p>
         </div>
       </div>
@@ -758,6 +806,13 @@
             // resultPara.textContent = `Error: ${err}`;
         }
     });
+
+    function scrollToSection(id) {
+            var element = document.getElementById(id);
+            var menuBarHeight = document.querySelector('.menu-container').offsetHeight;
+            var scrollPosition = element.offsetTop - menuBarHeight;
+            window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+    }
 </script>
 </body>
 
